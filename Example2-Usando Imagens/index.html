@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="FablePlayer">
+<head>
+	<title>Exemplo 2 - Usando imagens</title>
+	<script type="text/javascript" src="lib/angular.js"></script>
+	<script type="text/javascript" src="lib/angular-simple-sprite.js"></script>
+	<script type="text/javascript" src="../FableJS/main.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+	<!-- Se abrir o arquivo diretamente notará um comportamento estranho -->
+	<!-- Então vamos corrigir para a página funcionar bonitinho -->
+	<fable width="1000" height="600">
+		<page id="1">
+			<!--A tag <img>-->
+			<!-- src é onde a imagem se encontra na pasta -->
+			<!-- nesse caso a imagem está na pasta graphics -->
+			<!-- width se refere a largura da caixa -->
+			<!-- height se refere a altura da caixa -->
+			<!-- left se refere a posição da caixa no plano considerando o eixo horizontal-->
+			<!-- top se refere a posição da caixa no plano considerando o eixo vertical -->
+			<img src="graphics/box.png" width="77" height="77" left="100" top="100"/>
+
+			<!-- exercicio -->
+			<!-- a imagem abaixo -->
+			<!-- defina uma largura de 120 -->
+			<!-- defina uma altura de 140 -->
+			<!-- uma posição na horizontal de 800 -->
+			<!-- uma posição na vertical de 400 -->
+			<img src="graphics/box.png"  />
+			
+			<!-- exercicio 2 -->
+			<!-- coloque o src do cavaleiro na imagem abaixo -->
+			<img src="" width="80" height="120" left="400" top="300"/> 
+		</page>
+	</fable>
+</body>
+</html>

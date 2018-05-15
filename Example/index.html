@@ -10,7 +10,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 <body>
-	<fable width="1000px" height="600px" bg-sound="graphics/montagne.mp3">
+	<fable width="1000" height="600" bg-sound="graphics/montagne.mp3">
 			<page id="1" bg-image="graphics/BG.png" transition="animated fadeIn">
 				<div class="title" id="title" left="200" top="50" transition="animated bounce">O pequeno cavaleiro</div>
 				<!--cavaleiro e historia-->
@@ -193,10 +193,15 @@
 				<state id="perdido">
 				</state>
 				<state id="encontrado">
-					<img  transition="animated fadeIn" src="graphics/mush.png" left="600" top="200" width="60" height="60"/>
+					<img src="graphics/mush.png" left="600" top="200" width="60" height="60"/>
 					<on-touch>
 						<set target="antidote" value="true"></set>
+						<change-state target="guardado"></change-state>
 					</on-touch>
+				</state>
+				<state id="guardado">
+					<img transition="animated fadeOut" src="graphics/mush.png" left="600" top="200" width="60" height="60"/>
+					<trigger agent="avisoElixir" change-state="elixirEncontrado"></trigger>
 				</state>
 			</agent>
 
@@ -221,7 +226,11 @@
 				<state id="aberta">
 					<img transition="animated fadeOut" id="caixa" src="graphics/box.png" left="600" top="200" width="120" height="120"/>
 					<trigger agent="elixir" change-state="encontrado"></trigger>
-					<trigger agent="avisoElixir" change-state="elixirEncontrado"></trigger>
+					<on-touch>
+						<change-state target="destruida"></change-state>
+					</on-touch>
+				</state>
+				<state id="destruida">	
 				</state>
 			</agent>
 			

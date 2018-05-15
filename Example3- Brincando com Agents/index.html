@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="FablePlayer">
+<head>
+	<title>Fable-Player</title>
+	<script type="text/javascript" src="lib/angular.js"></script>
+	<script type="text/javascript" src="lib/angular-simple-sprite.js"></script>
+	<script type="text/javascript" src="../FableJS/main.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+	<fable width="1000" height="600">
+		<page id="1">
+			<div left="100" top="100" font-size="32">
+				<!-- Você pode usar a tag <br> para quebra de linha -->
+				Clique na porta para ver ela alternar em três estado.<br>
+				(trancada, destrancada, aberta)
+			</div>
+
+			<!-- Os agentes são forma de manipular elementos na historia -->
+			<!-- eles com um id(identificação) que seria como um nome de variavel -->
+			<!-- ou seja, ele não pode ser repetido -->
+			<agent id="door">
+				<!-- um agente é formado por estado -->
+				<!-- um estado contém um elemento de mídia(img, texto) -->
+				<state id="locked">
+					<img src="graphics/DoorLocked.png" top="300" left="400" width="280" height="264" />
+					<!-- O <on-touch> torna o elemento clicável neste estado -->
+					<on-touch>
+						<!-- Para que haja mudança de estado usando o on-touch -->
+						<!-- usa-se um <change-state> dentro do <on-touch> -->
+						<change-state target="unlocked"></change-state>
+					</on-touch>
+				</state>
+				<state id="unlocked">
+					<img src="graphics/DoorUnlocked.png" top="300" left="400" width="280" height="264" />
+					<on-touch>
+						<change-state target="open"></change-state>
+					</on-touch>
+				</state>
+				<state id="open">
+					<img src="graphics/DoorOpen.png" top="300" left="400" width="280" height="264" />
+				</state>
+			</agent>
+			
+		</page>
+	</fable>
+</body>
+</html>

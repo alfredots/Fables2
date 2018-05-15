@@ -1,0 +1,1 @@
+O template é o modelo base onde podem começar a testar a ferramenta.
