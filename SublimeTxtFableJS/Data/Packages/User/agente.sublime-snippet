@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[<agent id="agente1">
+	<property name="atributo_1" value="false">
+	<state id="estado_0">
+		<img id="imagem_estado_0" src="graphics/" left="400" top="400" width="80" height="140"/>
+	</state>
+</agent>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>agente</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

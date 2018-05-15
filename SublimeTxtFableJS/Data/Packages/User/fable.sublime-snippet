@@ -1,0 +1,30 @@
+<snippet>
+	<content><![CDATA[<!DOCTYPE html>
+<html ng-app="FablePlayer">
+<head>
+
+$PARAM1
+${PARAM1}
+	<title>Fable-Player</title>
+	<script type="text/javascript" src="lib/angular.js"></script>
+	<script type="text/javascript" src="lib/angular-simple-sprite.js"></script>
+	<script type="text/javascript" src="../FableJS/main.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+	<fable width="1000" height="600" bg-sound="graphics/">
+		<page id="1" bg-image="graphics/">
+			<div left="200" top="300" font-size="40" font-color="blue">
+				Hello World
+			</div>
+		</page>
+	</fable>
+</body>
+</html>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>fable</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

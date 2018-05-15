@@ -1,0 +1,19 @@
+<snippet>
+	<content><![CDATA[<animation speed="50" left="600" top="430" repeat="yes" width="100" height="130">
+	<img src="graphics/animation/imagem1.png"></img>
+	<img src="graphics/animation/imagem2.png"></img>
+	<img src="graphics/animation/imagem3.png"></img>
+	<img src="graphics/animation/imagem4.png"></img>
+	<img src="graphics/animation/imagem5.png"></img>
+	<img src="graphics/animation/imagem6.png"></img>
+	<img src="graphics/animation/imagem7.png"></img>
+	<img src="graphics/animation/imagem8.png"></img>
+	<img src="graphics/animation/imagem9.png"></img>
+	<img src="graphics/animation/imagem10.png"></img>
+</animation>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>animacao</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

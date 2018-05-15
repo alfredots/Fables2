@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[<img  src="graphics/" width="100" height="130" left="100" top="300"></img>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>imagem</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

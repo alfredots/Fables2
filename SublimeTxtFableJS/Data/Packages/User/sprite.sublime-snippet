@@ -1,0 +1,15 @@
+<snippet>
+	<content><![CDATA[<simple-sprite src="graphics/sprite.png" 
+        frame-width="184" 
+	frame-height="325" 
+	frames="8" 
+	frames-per-row="8" 
+	repeat="true" 
+	speed="100">
+</simple-sprite>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>sprite</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

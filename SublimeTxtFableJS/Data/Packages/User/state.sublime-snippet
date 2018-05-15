@@ -1,0 +1,20 @@
+<snippet>
+	<content><![CDATA[<state id="estado_X">
+	<trigger agent="agente_1" change-state="estado_Y"></trigger>
+	<trigger agent="agente_2" change-state="estado_Z"></trigger>
+	<img id="identificacao" src="graphics/imagem.png" left="400" top="400" width="80" height="140"/>
+	<detect target="quem" agent="agente_X" change-state="estado_J"></detect>
+	<on-touch>
+		<change-state target="estado_X2"></change-state>
+		<alert on-start="true">ALERTA!</alert>
+		<img id="imagem_1" transition="animated tada" src="graphics/imagem.png" left="50" top="505"/>
+		<emit event="goto_page" number="2"></emit>
+		<set target="atributo_1" value="true"></set>
+	</on-touch>
+</state>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>state</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
