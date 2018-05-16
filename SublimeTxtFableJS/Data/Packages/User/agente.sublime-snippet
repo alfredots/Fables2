@@ -1,8 +1,7 @@
 <snippet>
 	<content><![CDATA[<agent id="agente1">
-	<property name="atributo_1" value="false">
 	<state id="estado_0">
-		<img id="imagem_estado_0" src="graphics/" left="400" top="400" width="80" height="140"/>
+		<img id="imagem_estado_0" src="graphics/" left="100" top="100" width="100" height="100"/>
 	</state>
 </agent>
 ]]></content>

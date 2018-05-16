@@ -1,5 +1,5 @@
 <snippet>
-	<content><![CDATA[<board id="placa1" set-class="classic-board" font-size="20px" left="100" top="100" width="300" color="white">
+	<content><![CDATA[<board id="placa1" set-class="classic-board" font-size="20" left="100" top="100" width="300" color="white">
 	MENSAGEM DA PLACA
 </board>
 ]]></content>

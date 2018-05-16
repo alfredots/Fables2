@@ -2,10 +2,8 @@
 	<content><![CDATA[<!DOCTYPE html>
 <html ng-app="FablePlayer">
 <head>
-
-$PARAM1
-${PARAM1}
-	<title>Fable-Player</title>
+	<!-- coloque o titulo da sua história aqui -->
+	<title>Qual meu nome? :)</title>
 	<script type="text/javascript" src="lib/angular.js"></script>
 	<script type="text/javascript" src="lib/angular-simple-sprite.js"></script>
 	<script type="text/javascript" src="../FableJS/main.js"></script>
