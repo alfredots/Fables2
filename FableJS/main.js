@@ -199,17 +199,31 @@ app.factory('Book',function(){
     this.pages = new Array();
     this.currentPage = 1;
     this.sound;
+    this.number = 1;
+
     console.log("Book iniciou");
 
     this.addPage = function(page){
       this.pages.push(page);
     }
 
+    this.controlSound = function(){
+      console.log('som'+this.number);
+      try {
+        if(this.sound !== undefined)
+          this.sound.stopSound();
+        this.sound = Elements.getSound("bgSound"+this.number);
+        this.sound.start();
+      } catch(e) {
+        // statements
+        console.log(e);
+      }
+    }
+
     this.changePage = function(number){
+      this.number = number;
+      this.controlSound();
       if(number <= this.pages.length){
-        var sound = Elements.getSound("bgSound"+this.currentPage);
-        if(sound != undefined)
-          sound.stopSound();
         this.currentPage = number;
         this.checkPage();
       }else{
@@ -258,13 +272,19 @@ app.directive('fable', function(Book,AudioFactory) {
         for(var i = 0; i < list.length; i++){
           book.addPage({id: list[i].id, page: list[i]});
         }
-        book.checkPage();
+        book.changePage(1);
 
         /*Criando audio background para todas as páginas*/
         if(attr.bgSound != undefined){
-          var bgSound = new AudioFactory("bgSound"+attr.id,attr.bgSound, elem);
-          bgSound.start();
-          Elements.addSound(bgSound);
+         try {
+           // statements
+           var bgSound = new AudioFactory("bgSound"+attr.id,attr.bgSound, elem);
+           Elements.addSound(bgSound);
+
+         } catch(e) {
+           // statements
+           console.log(e);
+         }
         }
 
         Elements.setBook(book);//salvando livro
@@ -278,7 +298,7 @@ app.directive('fable', function(Book,AudioFactory) {
 /*
 * ------------- DIRETIVA PAGE -------------------------------
 */
-app.directive('page', function(){
+app.directive('page', function(AudioFactory){
   return{
     restrict: 'E',
     link: function(scope, elem, attr, ctrl){
@@ -317,11 +337,9 @@ app.directive('page', function(){
 
       /*criando audio-background*/
       if(attr.bgSound != undefined){
-        var bgSound = new Sound("bgSound"+attr.id,attr.bgSound, elem);
-        bgSound.start();
+        var bgSound = new AudioFactory("bgSound"+attr.id,attr.bgSound, elem);
         Elements.addSound(bgSound);
       }
-      //ModuleFable.getBook().bgSoundStart(attr.bgSound);
 }
   };
 });
@@ -669,10 +687,25 @@ app.factory('AudioFactory', function(){
     this.audio = new Audio(source);
 
     this.start = function(){
-      this.audio.play();
+      this.audio.load();
+      var playPromise = this.audio.play();
+
+        if (playPromise !== undefined) {
+          playPromise.then(_ => {
+            // Automatic playback started!
+            this.audio.play();
+            // Show playing UI.
+          })
+          .catch(error => {
+            // Auto-play was prevented
+            // Show paused UI.
+            this.audio.play();
+          });
+        }
     }
 
     this.stopSound = function(){
+      console.log('pausar audio');
       this.audio.pause();
     }
 
