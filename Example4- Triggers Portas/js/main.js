@@ -376,7 +376,7 @@ app.directive('agent', function(AgentFactory){
 
       var agent = new AgentFactory(states, elem, attr.id);
       for(var i=0;i<states.length;i++){
-        if(i!=1)
+        if(i!=0)
           states[i].remove();
         
         var stateParentName = states[i].id;

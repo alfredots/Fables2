@@ -24,18 +24,19 @@
 			</agent>
 
 			<agent id="button-door">
-				<state>
-				</state>
 				<state id="unlock">
 					<img src="graphics/Switch_lock.png" top="300" left="100" width="80" height="100"/>
-					<trigger agent="door" change-state="open"></trigger>
+					<!-- as triggers funcionam como acionadores -->
+					<!-- quando entra no estado a trigger altera o estado do outro agente -->
+					<!-- nesse caso, o botao fica destravado e a porta abre -->
+					<trigger agent="door" change-state="locked"></trigger>
 					<on-touch>
 						<change-state target="lock"></change-state>
 					</on-touch>
 				</state>
 				<state id="lock">
 					<img src="graphics/Switch_unlock.png" top="300" left="100" width="80" height="100"/>
-					<trigger agent="door" change-state="locked"></trigger>
+					<trigger agent="door" change-state="open"></trigger>
 					<on-touch>
 						<change-state target="unlock"></change-state>
 					</on-touch>
