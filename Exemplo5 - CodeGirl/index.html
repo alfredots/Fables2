@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html ng-app="FablePlayer">
+<head>
+	<title>Fable-Player</title>
+	<script type="text/javascript" src="lib/angular.js"></script>
+	<script type="text/javascript" src="lib/angular-simple-sprite.js"></script>
+	<script type="text/javascript" src="../FableJS/main.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+	<fable width="1000" height="600">
+		<page id="1" bg-image="graphics/background.png">
+			<img src="graphics/roda.png" left="50" top="50" width="500" height="600" />
+			<img src="graphics/santa.png" left="400" top="440" width="90" height="100"/>
+			<img src="graphics/girl.png" left="500" top="440" width="90" height="100"/>
+			<img src="graphics/cat.png" left="550" top="440" width="90" height="100"/>
+			<img src="graphics/dog.png" left="600" top="440" width="90" height="100"/>
+			<div left="50" top="50" font-size="25" font-color="red">
+				Clique no texto para passar a história
+			</div>
+			<img src="graphics/santa.png" left="400" top="440" width="90" height="100">
+			<agent id="historia1">
+				<state id="texto1">
+					<div left="600" top="200" font-size="30" width="300">
+						Santa está com problemas. Ele precisa de ajuda para permitir
+						a entrada de pessoas no brinquedo
+					</div>
+					<on-touch>
+						<change-state target="texto2"></change-state>
+					</on-touch>
+				</state>
+				<state id="texto2">
+					<div left="600" top="200" font-size="30" width="300">
+						Mas com ajuda da code girl ele terá todos os seus problemas resolvidos.
+					</div>
+					<on-touch>
+						<trigger agent="seta" change-state="mostrar"></trigger>
+					</on-touch>
+				</state>
+			</agent>
+
+			<agent id="seta">
+				<state id="inicial">
+		
+				</state>
+				<state id="mostrar">
+					<img src="graphics/next.png" left="800" top="500" width="120" height="80">
+					<on-touch>
+						<emit event="next_page"></emit>
+					</on-touch>
+				</state>
+			</agent>
+		</page>
+		<page id="2" bg-image="graphics/background.png">
+			<img src="graphics/roda.png" left="50" top="50" width="500" height="600" />
+			<img src="graphics/santa.png" left="400" top="440" width="90" height="100"/>
+			<img src="graphics/girl.png" left="500" top="440" width="90" height="100"/>
+			<img src="graphics/cat.png" left="550" top="440" width="90" height="100"/>
+			<img src="graphics/dog.png" left="600" top="440" width="90" height="100"/>
+
+			<img src="graphics/pergunta.png" left="600" top="10" width="300" height="200">
+
+			<agent id="resposta1">
+				<state id="inicial">
+					<img src="graphics/resposta1.png" left="500" top="250" width="250" height="180">
+					<on-touch>
+						<emit event="goto_page" number="3"></emit>
+					</on-touch>					
+				</state>
+			</agent>
+
+			<agent id="resposta2">
+				<state id="inicial">
+					<img src="graphics/resposta2.png" left="750" top="250" width="250" height="180">
+					<on-touch>
+						<emit event="goto_page" number="4"></emit>	
+					</on-touch>					
+				</state>
+			</agent>
+		</page>
+		<page id="3" bg-image="graphics/background.png">
+			<img src="graphics/roda.png" left="50" top="50" width="500" height="600" />
+			<img src="graphics/santa.png" left="400" top="440" width="90" height="100"/>
+			<img src="graphics/girl.png" left="500" top="440" width="90" height="100"/>
+			<img src="graphics/cat.png" left="550" top="440" width="90" height="100"/>
+			<img src="graphics/dog.png" left="600" top="440" width="90" height="100"/>
+			<div left="600" top="200" font-size="30" width="300">
+				Você escolheu a opção certa. Agora podem utilizar o brinquedo.
+			</div>
+		</page>
+		<page id="4" bg-image="graphics/background.png">
+			<img src="graphics/roda.png" left="50" top="50" width="500" height="600" />
+			<img src="graphics/santa.png" left="400" top="440" width="90" height="100"/>
+			<img src="graphics/girl.png" left="500" top="440" width="90" height="100"/>
+			<img src="graphics/cat.png" left="550" top="440" width="90" height="100"/>
+			<img src="graphics/dog.png" left="600" top="440" width="90" height="100"/>
+			<div left="600" top="200" font-size="30" width="300">
+				Eita!! Você permitiu que pessoas sem a altura ideal utilizassem
+				o brinquedo.
+			</div>
+		</page>
+	</fable>
+</body>
+</html>

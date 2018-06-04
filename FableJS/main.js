@@ -279,8 +279,7 @@ app.directive('fable', function(Book,AudioFactory) {
          try {
            // statements
            var bgSound = new AudioFactory("bgSound"+attr.id,attr.bgSound, elem);
-           Elements.addSound(bgSound);
-
+           bgSound.start();
          } catch(e) {
            // statements
            console.log(e);
